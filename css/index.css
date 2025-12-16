@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+html {
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow-y: scroll;
+  color: #ffffff;
+  background-color: #020d1b;
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+}
+
+.me-elena {
+  background: url(../assets/elena-photo.jpg) top center/450px no-repeat;
+}
+.me-elena__container {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 17px 20px 63px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.me-elena__name {
+  margin: 0 0 181px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110%;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.me-elena__title {
+  margin: 0 0 17px;
+  font-weight: 1000;
+  font-size: 30px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #fff;
+}
+.me-elena__title-subscribers, .me-elena__title-time {
+  color: #ffd400;
+}
+.me-elena__advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin: 0 0 39px;
+  padding: 0;
+  list-style-type: none;
+}
+.me-elena__advantages-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: inherit;
+      align-content: inherit;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #fff;
+}
+.me-elena__advantages-item::before {
+  content: "";
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 19px;
+  aspect-ratio: 1;
+  background: url(../assets/list-item-icon.svg) center/contain no-repeat;
+}
+.me-elena__video {
+  max-width: 320px;
+  min-height: 570px;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+  background: #fff;
+}
+.me-elena__price {
+  margin: 0 auto 30px;
+  font-weight: 1000;
+  font-size: 24px;
+  line-height: 130%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 25px 0 #08151d;
+}
+.me-elena__price-info {
+  color: #fff;
+}
+.me-elena__price-counter {
+  color: #ffd400;
+}
+.me-elena__buy-link {
+  display: block;
+  padding: 13px 20px 20px;
+  border-radius: 10px;
+  background-color: #fc2f3d;
+  -webkit-box-shadow: 0 8px 0 0 #b60b16;
+          box-shadow: 0 8px 0 0 #b60b16;
+  -webkit-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+}
+.me-elena__buy-link:hover {
+  background-color: #e22a36;
+}
+.me-elena__buy-link:active {
+  background-color: #c92530;
+}
+.me-elena__buy-link-content {
+  margin: 0 auto;
+  max-width: 250px;
+  font-weight: 1000;
+  font-size: 24px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #fff;
+}

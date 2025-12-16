@@ -1,0 +1,122 @@
+.me-elena {
+  background: url(../assets/elena-photo.jpg) top center / 450px no-repeat;
+
+  &__container {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 17px 20px 63px;
+    box-sizing: border-box;
+  }
+
+  &__name {
+    margin: 0 0 181px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__title {
+    margin: 0 0 17px;
+    font-weight: 1000;
+    font-size: 30px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #fff;
+
+    &-subscribers,
+    &-time {
+      color: #ffd400;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 39px;
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      display: flex;
+      align-content: inherit;
+      gap: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
+      color: #fff;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        flex: 0 0 auto;
+        width: 19px;
+        aspect-ratio: 1;
+        background: url(../assets/list-item-icon.svg) center / contain no-repeat;
+      }
+    }
+  }
+
+  &__video {
+    max-width: 320px;
+    min-height: 570px;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  &__price {
+    margin: 0 auto 30px;
+    font-weight: 1000;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 25px 0 #08151d;
+
+    &-info {
+      color: #fff;
+    }
+
+    &-counter {
+      color: #ffd400;
+    }
+  }
+
+  &__buy {
+    &-link {
+      display: block;
+      padding: 13px 20px 20px;
+      border-radius: 10px;
+      background-color: #fc2f3d;
+      box-shadow: 0 8px 0 0 #b60b16;
+      transition: background-color ease-out 0.2s;
+
+      &:hover {
+        background-color: #e22a36;
+      }
+
+      &:active {
+        background-color: #c92530;
+      }
+
+      &-content {
+        margin: 0 auto;
+        max-width: 250px;
+        font-weight: 1000;
+        font-size: 24px;
+        line-height: 130%;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      &-old {
+      }
+    }
+  }
+}
