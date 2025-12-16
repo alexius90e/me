@@ -137,3 +137,8 @@ textarea {
   text-transform: uppercase;
   color: #fff;
 }
+.me-elena__buy-link-old {
+  font-weight: 300;
+  text-decoration: line-through;
+  color: #ffa0a6;
+}

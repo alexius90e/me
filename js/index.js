@@ -50,21 +50,18 @@ function startCountdownToEndOfDay() {
 
   function update() {
     const now = new Date();
-    // конец дня = 23:59:59
     const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
 
-    const diff = Math.max(0, Math.floor((endOfDay - now) / 1000)); // разница в секундах
+    const diff = Math.max(0, Math.floor((endOfDay - now) / 1000));
 
-    const h = Math.floor(diff / 3600);
-    const m = Math.floor((diff % 3600) / 60);
-    const s = diff % 60;
+    const hours = Math.floor(diff / 3600);
+    const hoursString = hours.toString().padStart(2, '0');
+    const minutes = Math.floor((diff % 3600) / 60);
+    const minutesString = minutes.toString().padStart(2, '0');
+    const seconds = diff % 60;
+    const secondsString = seconds.toString().padStart(2, '0');
 
-    const formatted =
-      h.toString().padStart(2, '0') +
-      ' : ' +
-      m.toString().padStart(2, '0') +
-      ' : ' +
-      s.toString().padStart(2, '0');
+    const formatted = `${hoursString} : ${minutesString} : ${secondsString}`;
 
     el.textContent = formatted;
 
