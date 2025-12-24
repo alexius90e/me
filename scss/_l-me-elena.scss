@@ -9,7 +9,7 @@
   }
 
   &__name {
-    margin: 0 0 181px;
+    margin: 0 0 155px;
     font-weight: 400;
     font-size: 14px;
     line-height: 110%;
@@ -20,16 +20,45 @@
   }
 
   &__title {
-    margin: 0 0 17px;
+    margin: 0 0 4px;
     font-weight: 1000;
     font-size: 30px;
-    line-height: 130%;
+    line-height: 120%;
     text-transform: uppercase;
     color: #fff;
 
     &-subscribers,
     &-time {
       color: #ffd400;
+    }
+  }
+
+  &__description {
+    max-width: 303px;
+    margin: 0 0 7px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: #fff;
+
+    &-mark {
+      color: #ffd400;
+    }
+  }
+
+  &__exceptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 7px;
+    max-width: 168px;
+    margin: 0 0 41px;
+
+    &-item {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 100%;
+      text-decoration: line-through;
+      color: rgba(255, 255, 255, 0.5);
     }
   }
 
@@ -64,9 +93,78 @@
   &__video {
     max-width: 320px;
     min-height: 570px;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
     border-radius: 10px;
     background: #fff;
+  }
+
+  &__cases {
+    &-title {
+      margin: 0 0 5px;
+      font-weight: 1000;
+      font-size: 30px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: #fff;
+
+      &-mark {
+        color: #ffd400;
+      }
+    }
+
+    &-description {
+      margin: 0 0 15px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      color: #fff;
+
+      &-mark {
+        color: #ffd400;
+      }
+    }
+
+    &-slider {
+      margin: 0 0 20px;
+
+      &-slide {
+        margin: 0;
+
+        &-image {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+      }
+
+      & .swiper {
+        padding-bottom: 25px;
+
+        &-pagination {
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &-bullet {
+            display: block;
+            flex: 0 0 auto;
+            width: 6px;
+            height: 6px;
+            margin: 0;
+            background-color: #ffffff;
+            opacity: 1;
+
+            &-active {
+              width: 10px;
+              height: 10px;
+              background-color: #ffd400;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__price {
@@ -111,6 +209,7 @@
         font-weight: 1000;
         font-size: 24px;
         line-height: 130%;
+        text-align: center;
         text-transform: uppercase;
         color: #fff;
       }

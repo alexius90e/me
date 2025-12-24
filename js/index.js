@@ -1,48 +1,43 @@
-const animationDuration = 1500;
-
-function animateSubscribers(targetValue = 10000, duration = animationDuration) {
-  const el = document.querySelector('.me-elena__title-subscribers');
+function animateCounterOnView(
+  element,
+  { targetValue = 10000, duration = 1500, separator = '.' } = {}
+) {
+  const el = typeof element === 'string' ? document.querySelector(element) : element;
   if (!el) return;
 
-  const startTime = performance.now();
+  function startAnimation() {
+    const startTime = performance.now();
 
-  function update(currentTime) {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const value = Math.floor(progress * targetValue);
+    function update(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = Math.floor(progress * targetValue);
+      el.textContent = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
-    el.textContent = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
+      if (progress < 1) requestAnimationFrame(update);
     }
+
+    requestAnimationFrame(update);
   }
 
-  requestAnimationFrame(update);
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAnimation();
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  observer.observe(el);
 }
 
-animateSubscribers();
-
-function animateTimeCounter(startValue = 1, targetValue = 31, duration = animationDuration) {
-  const el = document.querySelector('.me-elena__title-time-counter');
-  if (!el) return;
-
-  const startTime = performance.now();
-
-  function update(currentTime) {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const value = Math.floor(startValue + progress * (targetValue - startValue));
-
-    el.textContent = value.toString().padStart(2, '0');
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
-animateTimeCounter();
+animateCounterOnView('.me-elena__title-time-counter', { targetValue: 30 });
+animateCounterOnView('.me-elena__description-views', { targetValue: 1000000 });
+animateCounterOnView('.me-elena__description-subscribers', { targetValue: 10000 });
+animateCounterOnView('.me-elena__description-minutes', { targetValue: 15 });
+animateCounterOnView('.me-elena__cases-title-counter', { targetValue: 1000000 });
 
 function startCountdownToEndOfDay() {
   const el = document.querySelector('.me-elena__price-counter');
@@ -76,3 +71,16 @@ function startCountdownToEndOfDay() {
 }
 
 startCountdownToEndOfDay();
+
+const casesSlider = document.querySelector('.me-elena__cases-slider .swiper');
+
+if (casesSlider) {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+}
